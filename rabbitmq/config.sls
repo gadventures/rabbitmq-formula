@@ -1,6 +1,6 @@
 {% for name, plugin in salt["pillar.get"]("rabbitmq:plugin", {}).iteritems() %}
 {{ name }}:
-  rabbitmq_plugin:
+  rabbitmq_plugin.enabled:
     {% for value in plugin %}
     - {{ value }}
     {% endfor %}
